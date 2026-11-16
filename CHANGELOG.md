@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/ACR1209/tipasa/compare/tipasa/v0.2.0...tipasa/v0.2.1) (2026-11-16)
+
+
+### Miscellaneous Chores
+
+* ignore built gem files ([a928a44](https://github.com/ACR1209/tipasa/commit/a928a44e95e6c2b549c25268f5314c5eedf8b3f9))
+
 ## [0.2.0](https://github.com/ACR1209/tipasa/compare/tipasa-v0.1.0...tipasa/v0.2.0) (2026-11-16)
 
 
