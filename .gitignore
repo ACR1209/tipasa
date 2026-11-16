@@ -11,3 +11,4 @@
 /node_modules/
 /spec/dummy/public/tipasa-test.*
 /Gemfile.lock
+/*.gem
