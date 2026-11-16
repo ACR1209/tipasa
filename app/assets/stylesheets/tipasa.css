@@ -1,0 +1,66 @@
+/* Tipasa: driver.js base styles plus the step counter, the "waiting" hint and the pulse.
+   Theme it with --tipasa-accent (pulse and hint dot) and the --driver-* variables. */
+@import "driver.js/dist/driver.css";
+
+.tipasa-popover.driver-popover {
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 340px;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.tipasa-popover .driver-popover-footer {
+  gap: 8px;
+}
+
+.tipasa-popover .driver-popover-description :is(img, video) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 12px;
+  border-radius: 8px;
+}
+
+.tipasa-popover .tipasa-progress,
+.tipasa-popover .tipasa-waiting {
+  margin-right: auto;
+  align-self: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.tipasa-popover .tipasa-waiting {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tipasa-popover .tipasa-waiting-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--tipasa-accent, #2563eb);
+  animation: tipasa-blink 1.4s ease-in-out infinite;
+}
+
+@keyframes tipasa-blink {
+  50% { opacity: 0.3; }
+}
+
+@keyframes tipasa-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--tipasa-accent, #2563eb) 70%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 14px transparent; }
+}
+
+.tipasa-pulse {
+  outline: 2px solid var(--tipasa-accent, #2563eb);
+  animation: tipasa-pulse 1.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tipasa-pulse,
+  .tipasa-popover .tipasa-waiting-dot {
+    animation: none;
+  }
+}

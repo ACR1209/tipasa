@@ -1,0 +1,9 @@
+en:
+  tipasa:
+    next: "Next"
+    back: "Back"
+    done: "Finish"
+    close: "Close tour"
+    replay: "Show the tour"
+    waiting: "Click the highlighted element to continue"
+    progress: "Step %{current} of %{total}"

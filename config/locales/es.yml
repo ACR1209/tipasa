@@ -1,0 +1,9 @@
+es:
+  tipasa:
+    next: "Siguiente"
+    back: "Atrás"
+    done: "Finalizar"
+    close: "Cerrar recorrido"
+    replay: "Ver el recorrido"
+    waiting: "Haz clic en lo resaltado para continuar"
+    progress: "Paso %{current} de %{total}"

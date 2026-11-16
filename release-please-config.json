@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "ruby",
+      "package-name": "tipasa",
+      "version-file": "lib/tipasa/version.rb",
+      "extra-files": [
+        { "type": "json", "path": "package.json", "jsonpath": "$.version" }
+      ]
+    }
+  }
+}

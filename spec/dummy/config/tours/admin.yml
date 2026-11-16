@@ -1,0 +1,6 @@
+name: "Admin"
+for: [AdminUser]
+steps:
+  - id: "panel"
+    title: "Panel"
+    text: "Only admins see this."

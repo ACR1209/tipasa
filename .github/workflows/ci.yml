@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        rails: ["~> 7.1.0", "~> 7.2.0", "~> 8.1.0"]
+    env:
+      RAILS_VERSION: ${{ matrix.rails }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: bundle exec rspec
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: bin/rubocop -f github
+
+  # The npm package must install and bundle the way a host app does it.
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm pack
+      - run: |
+          mkdir /tmp/host && cd /tmp/host && npm init -y >/dev/null
+          npm install "$GITHUB_WORKSPACE"/tipasa-*.tgz @hotwired/stimulus esbuild
+          printf 'import T from "tipasa";\nimport "tipasa/tipasa.css";\nconsole.log(typeof T);\n' > app.js
+          npx esbuild app.js --bundle --outdir=out

@@ -1,0 +1,10 @@
+name: "Welcome"
+description: "First look around"
+steps:
+  - id: "hello"
+    title: "Hello"
+    text: "Welcome aboard."
+  - id: "menu"
+    title: "Menu"
+    text: "Everything starts here."
+    element_selector: "#menu"

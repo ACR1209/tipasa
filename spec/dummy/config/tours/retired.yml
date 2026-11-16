@@ -1,0 +1,6 @@
+name: "Retired"
+active: false
+steps:
+  - id: "old"
+    title: "Old"
+    text: "Gone."
