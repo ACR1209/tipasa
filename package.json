@@ -1,19 +1,33 @@
 {
   "name": "tipasa",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Stimulus controller for the tipasa Rails gem: guided product tours on driver.js.",
   "license": "MIT",
   "type": "module",
-  "repository": { "type": "git", "url": "git+https://github.com/ACR1209/tipasa.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ACR1209/tipasa.git"
+  },
   "homepage": "https://github.com/ACR1209/tipasa",
-  "keywords": ["rails", "stimulus", "tour", "onboarding", "driver.js"],
+  "keywords": [
+    "rails",
+    "stimulus",
+    "tour",
+    "onboarding",
+    "driver.js"
+  ],
   "module": "app/javascript/tipasa/index.js",
   "exports": {
     ".": "./app/javascript/tipasa/index.js",
     "./tipasa.css": "./app/assets/stylesheets/tipasa.css"
   },
-  "files": ["app/javascript/tipasa", "app/assets/stylesheets/tipasa.css"],
-  "sideEffects": ["*.css"],
+  "files": [
+    "app/javascript/tipasa",
+    "app/assets/stylesheets/tipasa.css"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
   "peerDependencies": {
     "@hotwired/stimulus": "^3.0.0"
   },
